@@ -8,7 +8,7 @@ export const searchMoviesApi = createApi({
   endpoints: (build) => ({
     getSearchedMovies: build.query<IMovieList, string>({
       query: (searchQuery: string) => ({
-        url: `/?s=${searchQuery}&apikey=2f4de909`,
+        url: `/?s=${searchQuery}&apikey=${process.env.API_KEY}`,
       }),
       providesTags: (res) => ["Movies"],
     }),
