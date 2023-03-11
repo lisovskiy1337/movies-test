@@ -13,7 +13,7 @@ interface PageProps {
 
 const fetchMovie = async (movieId: string) => {
   const res = await fetch(
-    `http://www.omdbapi.com/?i=${movieId}&apikey=${process.env.API_KEY}`,
+    `http://www.omdbapi.com/?i=${movieId}&apikey=2f4de909`,
     { next: {revalidate: 60}}
   );
   const movie: IMovie = await res.json();
@@ -33,7 +33,6 @@ const Movie = async ({ params: { movieId } }: PageProps) => {
         <img src={movie.Poster} alt="" className="rounded-2xl w-96 h-[30rem]" />
         <AddFavoriteButton {...movie} />
       </div>
-
       <div>
         <div className="flex text-3xl gap-2">
           {movie.Title} • {movie?.Year} • {movie?.Runtime}
@@ -81,7 +80,7 @@ export default Movie;
 
 export async function generateStaticParams(){
   const res = await fetch(
-    `https://www.omdbapi.com/?s=harry+potter&apikey=${process.env.API_KEY}`
+    `https://www.omdbapi.com/?s=harry+potter&apikey=2f4de909`
   );
   const movies: IMovieList = await res.json();
   return movies.Search.map(movie => ({

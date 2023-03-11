@@ -5,7 +5,7 @@ import { IMovieList } from "../../types/Movie";
 
 const fetchMovies = async () => {
   const res = await fetch(
-    `https://www.omdbapi.com/?s=harry+potter&apikey=${process.env.API_KEY}`, {cache: 'force-cache'}
+    `https://www.omdbapi.com/?s=harry+potter&apikey=2f4de909`, {cache: 'force-cache'}
   );
   const movies: IMovieList = await res.json();
   return movies.Search;
