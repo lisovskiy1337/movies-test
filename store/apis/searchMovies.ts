@@ -4,7 +4,7 @@ import { IMovieList } from "../../types/Movie";
 export const searchMoviesApi = createApi({
   reducerPath: "searchMoviesApi",
   tagTypes: ["Movies"],
-  baseQuery: fetchBaseQuery({ baseUrl: `http://www.omdbapi.com` }),
+  baseQuery: fetchBaseQuery({ baseUrl: `https://www.omdbapi.com` }),
   endpoints: (build) => ({
     getSearchedMovies: build.query<IMovieList, string>({
       query: (searchQuery: string) => ({

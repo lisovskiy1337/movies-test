@@ -13,7 +13,7 @@ interface PageProps {
 
 const fetchMovie = async (movieId: string) => {
   const res = await fetch(
-    `http://www.omdbapi.com/?i=${movieId}&apikey=2f4de909`,
+    `https://www.omdbapi.com/?i=${movieId}&apikey=2f4de909`,
     { next: {revalidate: 60}}
   );
   const movie: IMovie = await res.json();
